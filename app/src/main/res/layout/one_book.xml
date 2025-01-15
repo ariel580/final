@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#CFD5DA"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageViewBookImage"
+        android:layout_width="60dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/the_hunger_game"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewBookName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="The Hunger Game"
+        android:textSize="22sp"
+        android:textColor="#000000"
+        app:layout_constraintStart_toEndOf="@+id/imageViewBookImage"
+        app:layout_constraintTop_toTopOf="@+id/imageViewBookImage" />
+
+    <TextView
+        android:id="@+id/textViewBookAuthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Suzanne Collins"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/textViewBookName"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBookName" />
+
+    <TextView
+        android:id="@+id/textViewBookGenre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fantasy"
+        android:textSize="12sp"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewBookImage"
+        app:layout_constraintStart_toStartOf="@+id/textViewBookAuthor" />
+
+    <Button
+        android:id="@+id/buttonInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/my_btn"
+        android:padding="12dp"
+        android:text="more info"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewBookImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageViewBookImage" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="409dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="1dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewBookImage" />
+</androidx.constraintlayout.widget.ConstraintLayout>

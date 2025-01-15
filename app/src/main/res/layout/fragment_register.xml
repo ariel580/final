@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A1E91"
+    tools:context=".RegisterFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_marginTop="24dp"
+        android:textSize="32sp"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/open_sans"
+        android:text="Register" />
+    <EditText
+        android:id="@+id/editTextFirstNameReg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="enter your first name"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/open_sans"
+        android:layout_marginTop="96dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:inputType="textEmailAddress"
+        android:autofillHints="" />
+    <EditText
+        android:id="@+id/editTextLastNameReg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="enter your last name"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/open_sans"
+        android:layout_marginTop="135dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:inputType="textPassword"
+        android:autofillHints="" />
+    <EditText
+        android:id="@+id/editTextEmailReg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="enter your email"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/open_sans"
+        android:layout_marginTop="170dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:inputType="textEmailAddress"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/editTextPasswordReg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="enter your password"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/open_sans"
+        android:layout_marginTop="210dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:inputType="textPassword"
+        android:autofillHints="" />
+    <Button
+        android:id="@+id/buttonRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="rGISTER"
+        android:background="@drawable/my_btn"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="270dp"
+        android:layout_gravity="center_horizontal"
+        />
+
+</FrameLayout>
