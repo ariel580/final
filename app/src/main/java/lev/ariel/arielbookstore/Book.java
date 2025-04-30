@@ -1,18 +1,37 @@
 package lev.ariel.arielbookstore;
 
-public class Book
-{
+import android.widget.ImageView;
+
+// This class represents a Book object with all relevant properties
+public class Book {
+
+    // The image resource ID representing the book cover (from drawable)
     private int bookImage;
+
+    // Unique ISBN identifier for the book
     private String bookIsbn;
+
+    // Title of the book
     private String bookName;
+
+    // Author of the book
     private String bookAuthor;
+
+    // Short description or summary of the book
     private String bookDescription;
-    private Genre bookGenre;
+
+    // Genre/category of the book (e.g., Fiction, Biography)
+    private String bookGenre;
+
+    // Number of pages in the book
     private int bookLength;
+
+    // Price of the book
     private float bookPrice;
 
-
-    public Book(int bookImage, String bookIsbn, String bookName, String bookAuthor, String bookDescription, Genre bookGenre, int bookLength, float bookPrice) {
+    // Full constructor to initialize all fields when creating a new Book object
+    public Book(int bookImage, String bookIsbn, String bookName, String bookAuthor,
+                String bookDescription, String bookGenre, int bookLength, float bookPrice) {
         this.bookImage = bookImage;
         this.bookIsbn = bookIsbn;
         this.bookName = bookName;
@@ -23,8 +42,12 @@ public class Book
         this.bookPrice = bookPrice;
     }
 
+    // Empty constructor (needed for Firebase or serialization)
     public Book() {
     }
+
+    // Getter and setter methods for each field:
+    // Used to read and update the properties of the book
 
     public int getBookImage() {
         return bookImage;
@@ -66,11 +89,11 @@ public class Book
         this.bookDescription = bookDescription;
     }
 
-    public Genre getBookGenre() {
+    public String getBookGenre() {
         return bookGenre;
     }
 
-    public void setBookGenre(Genre bookGenre) {
+    public void setBookGenre(String bookGenre) {
         this.bookGenre = bookGenre;
     }
 
@@ -88,5 +111,20 @@ public class Book
 
     public void setBookPrice(float bookPrice) {
         this.bookPrice = bookPrice;
+    }
+
+    // Overrides the default toString() method to return all book details as a single string
+    @Override
+    public String toString() {
+        return "Book{" +
+                "bookImage=" + bookImage +
+                ", bookIsbn='" + bookIsbn + '\'' +
+                ", bookName='" + bookName + '\'' +
+                ", bookAuthor='" + bookAuthor + '\'' +
+                ", bookDescription='" + bookDescription + '\'' +
+                ", bookGenre='" + bookGenre + '\'' +
+                ", bookLength=" + bookLength +
+                ", bookPrice=" + bookPrice +
+                '}';
     }
 }

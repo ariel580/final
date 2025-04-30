@@ -5,6 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/my_background"
+
     tools:context=".BookListActivity">
 
     <TextView
@@ -12,6 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:textStyle="bold"
         android:text="Book List"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,6 +39,8 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:text="search"
+        android:background="@drawable/my_btn"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/editTextSearchByName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/editTextSearchByName" />
@@ -56,6 +61,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Search"
+        android:background="@drawable/my_btn"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="@+id/buttonSearchByName"
         app:layout_constraintStart_toStartOf="@+id/buttonSearchByName"
         app:layout_constraintTop_toTopOf="@+id/editTextSearchByGenre" />
@@ -70,4 +77,37 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonSearchByGenre" />
+
+    <ImageButton
+        android:id="@+id/playService"
+        android:layout_width="32dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_media_play" />
+
+    <ImageButton
+        android:id="@+id/pauseService"
+        android:layout_width="32dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="48dp"
+        android:background="@color/black"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_media_pause" />
+
+    <ImageButton
+        android:id="@+id/stopService"
+        android:layout_width="32dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="88dp"
+        android:background="@color/black"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
 </androidx.constraintlayout.widget.ConstraintLayout>

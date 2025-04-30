@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/my_background"
+
+    tools:context=".BookPageActivity">
+
+    <TextView
+        android:id="@+id/textViewOneBookTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="The Hunger Games"
+        android:textStyle="bold"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewOneBookImage"
+        android:layout_width="162dp"
+        android:layout_height="226dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewOneBookAuthor"
+        app:srcCompat="@drawable/baseline_photo_24" />
+
+    <TextView
+        android:id="@+id/textViewBookIsbn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="ISBN: FF12TR"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewOneBookImage"
+        app:layout_constraintStart_toStartOf="@+id/imageViewOneBookImage"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewOneBookImage" />
+
+    <TextView
+        android:id="@+id/textViewOneBookAuthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Drama, witten by Suzanne Collins"
+        app:layout_constraintEnd_toEndOf="@+id/textViewOneBookTitle"
+        app:layout_constraintStart_toStartOf="@+id/textViewOneBookTitle"
+        app:layout_constraintTop_toBottomOf="@+id/textViewOneBookTitle" />
+
+    <TextView
+        android:id="@+id/textViewOneBookDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+
+        android:text="Every year, two children, one boy and one girl, from the first 12 districts are selected via lottery to participate in a compulsory televised subjugation, disguised as a battle royale death match called &quot;The Hunger Games&quot;, a spectacle of brutality and survival orchestrated by the powerful to maintain their grip on the ... "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBookIsbn" />
+
+    <TextView
+        android:id="@+id/textViewOneBookLength"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="412 pages"
+        app:layout_constraintEnd_toEndOf="@+id/textViewOneBookDescription"
+        app:layout_constraintStart_toStartOf="@+id/textViewOneBookDescription"
+        app:layout_constraintTop_toBottomOf="@+id/textViewOneBookDescription" />
+
+    <TextView
+        android:id="@+id/textViewOneBookPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Price : 378 nis"
+        app:layout_constraintEnd_toEndOf="@+id/textViewOneBookLength"
+        app:layout_constraintStart_toStartOf="@+id/textViewOneBookLength"
+        app:layout_constraintTop_toBottomOf="@+id/textViewOneBookLength" />
+
+    <Button
+        android:id="@+id/buttonBuy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/my_btn"
+        android:text="buy"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/buttonBackToBookListPage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewOneBookPrice"
+        app:layout_constraintVertical_bias="0.707" />
+
+    <Button
+        android:id="@+id/buttonBackToBookListPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/my_btn"
+        android:textColor="#FFFFFF"
+        android:text="  back to booklist's page "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
