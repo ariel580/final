@@ -9,17 +9,28 @@
 
     tools:context=".BookPageActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/myToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_gravity="top"
+        android:background="@android:color/transparent"
+        android:elevation="4dp"
+        android:theme="@style/BlackToolbarIcons"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp" />
+
     <TextView
         android:id="@+id/textViewOneBookTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="The Hunger Games"
-        android:textStyle="bold"
         android:textSize="34sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/myToolbar" />
 
     <ImageView
         android:id="@+id/imageViewOneBookImage"
@@ -91,13 +102,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
         android:background="@drawable/my_btn"
         android:text="buy"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/buttonBackToBookListPage"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewOneBookPrice"
         app:layout_constraintVertical_bias="0.707" />
 
@@ -105,11 +115,28 @@
         android:id="@+id/buttonBackToBookListPage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:layout_marginBottom="32dp"
         android:background="@drawable/my_btn"
-        android:textColor="#FFFFFF"
         android:text="  back to booklist's page "
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonBuy" />
+
+    <ImageButton
+        android:id="@+id/imageButtonFavorite"
+        android:layout_width="70dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="58dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Favorite Button"
+        android:scaleType="centerCrop"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonBuy"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/baseline_favorite_border_24" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

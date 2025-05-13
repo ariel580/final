@@ -8,20 +8,31 @@
     android:background="@drawable/my_background"
     tools:context=".GoodbyeActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/myToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@android:color/transparent"
+        android:elevation="4dp"
+        android:theme="@style/BlackToolbarIcons"
+        app:title=""
+        app:titleTextColor="@color/black"
+        tools:ignore="MissingConstraints" />
+
     <TextView
         android:id="@+id/textViewGoodByeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
-        android:text="thank you for shopping at ariel's books"
+        android:text="Thank you for shopping at ariel's books"
+        android:padding="8dp"
         android:textColor="@color/black"
         android:textSize="35dp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/myToolbar" />
 
     <ImageView
         android:id="@+id/imageViewLogo"
@@ -34,4 +45,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
+
+    <Button
+        android:id="@+id/buttonBackHome"
+        android:layout_width="140dp"
+        android:layout_height="83dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="48dp"
+        android:background="@drawable/my_btn"
+        android:padding="12dp"
+        android:text="back to home page"
+        android:textColor="#FFFFFF"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/buttonClose"
+        android:layout_width="140dp"
+        android:layout_height="83dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/my_btn"
+        android:padding="12dp"
+        android:text="close app"
+        android:textColor="#FFFFFF"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/buttonBackHome"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

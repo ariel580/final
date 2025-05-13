@@ -2,16 +2,21 @@
 class lev.ariel.arielbookstore.HomeActivity {
 ~ Button loginPageBtn
 ~ ImageButton moreInfoIb
-~ Context context
 - Calendar calendar
+~ Context context
 # void onCreate(Bundle)
 + void loadFragment(Fragment)
 + void onClick(View)
 - void createDialog()
-- void scheduleNotification()
-- void createNotificationChannel()
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
 }
 
+
+class lev.ariel.arielbookstore.NotificationUtils {
++ {static} void scheduleNotification(Context)
++ {static} void createNotificationChannel(Context)
+}
 
 class lev.ariel.arielbookstore.MyService {
 - MediaPlayer mediaPlayer
@@ -24,7 +29,7 @@ class lev.ariel.arielbookstore.MyService {
 
 
 class lev.ariel.arielbookstore.Book {
-- ImageView bookImage
+- int bookImage
 - String bookIsbn
 - String bookName
 - String bookAuthor
@@ -32,8 +37,9 @@ class lev.ariel.arielbookstore.Book {
 - String bookGenre
 - int bookLength
 - float bookPrice
+- String sellerEmail
 + int getBookImage()
-+ void setBookImage(ImageView)
++ void setBookImage(int)
 + String getBookIsbn()
 + void setBookIsbn(String)
 + String getBookName()
@@ -48,20 +54,22 @@ class lev.ariel.arielbookstore.Book {
 + void setBookLength(int)
 + float getBookPrice()
 + void setBookPrice(float)
++ String getSellerEmail()
++ void setSellerEmail(String)
 + String toString()
 }
 
 
-class lev.ariel.arielbookstore.ScheduleBroadCastReceiver {
-~ String message
-+ void onReceive(Context,Intent)
-}
-
-
 class lev.ariel.arielbookstore.GoodbyeActivity {
+~ Button back
+~ Context context
+- {static} String SENDERID_API_KEY
+- {static} String FROM_EMAIL
 ~ FirebaseAuth auth
 # void onCreate(Bundle)
-+ void sendMessageByEmail()
+- void sendEmail(String,String,String)
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
 }
 
 
@@ -87,11 +95,24 @@ class lev.ariel.arielbookstore.RegisterFragment {
 }
 
 
-class lev.ariel.arielbookstore.BuyOrSellActivity {
-~ Button buybtn
-# void onCreate(Bundle)
+class lev.ariel.arielbookstore.ScheduleBroadCastReciver {
++ void onReceive(Context,Intent)
+- void showNotification(Context,int)
 }
 
+class lev.ariel.arielbookstore.BuyOrSellActivity {
+~ Context context
+# void onCreate(Bundle)
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
+}
+
+
+class lev.ariel.arielbookstore.FavoritesUtils {
++ {static} void showFavoritesDialog(Context)
+- {static} void showFavoritesDialogWithBooks(Context,List<DocumentSnapshot>)
+- {static} List<List<T>> chunkList(List<T>,int)
+}
 
 class lev.ariel.arielbookstore.MainActivity {
 ~ ImageView logoIv
@@ -103,7 +124,6 @@ class lev.ariel.arielbookstore.MainActivity {
 class lev.ariel.arielbookstore.BookListActivity {
 ~ ImageButton playService
 ~ EditText nameSearch
-~ ImageView photo
 ~ Context context
 ~ Button ByName
 ~ RecyclerView bookListRv
@@ -112,10 +132,11 @@ class lev.ariel.arielbookstore.BookListActivity {
 ~ FirebaseFirestore db
 # void onCreate(Bundle)
 + void getAll()
-+ void getImage()
 + void onClick(View)
-+ void filterByGenre(String)
+- void loadBooksByGenre(String)
 + void filterByName(String)
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
 }
 
 
@@ -123,10 +144,13 @@ class lev.ariel.arielbookstore.SellPageActivity {
 ~ EditText AuthorName
 ~ Button btn
 ~ FirebaseFirestore db
+~ Context context
 - ActivityResultLauncher<Uri> cameraLauncher
 - Uri photoUri
 # void onCreate(Bundle)
 + void openCamera()
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
 }
 
 
@@ -141,25 +165,25 @@ class lev.ariel.arielbookstore.BookPageActivity {
 ~ TextView title
 ~ ImageView image
 ~ Button back
+~ ImageButton favorite
+~ Context context
 # void onCreate(Bundle)
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
 }
 
-
-class lev.ariel.arielbookstore.FireStore {
-~ FirebaseFirestore db
-}
 
 
 
 lev.ariel.arielbookstore.OnClickListener <|.. lev.ariel.arielbookstore.HomeActivity
 androidx.appcompat.app.AppCompatActivity <|-- lev.ariel.arielbookstore.HomeActivity
 android.app.Service <|-- lev.ariel.arielbookstore.MyService
-android.content.BroadcastReceiver <|-- lev.ariel.arielbookstore.ScheduleBroadCastReceiver
 androidx.appcompat.app.AppCompatActivity <|-- lev.ariel.arielbookstore.GoodbyeActivity
 lev.ariel.arielbookstore.Adapter <|-- lev.ariel.arielbookstore.BookAdapter
 lev.ariel.arielbookstore.BookAdapter +.. lev.ariel.arielbookstore.BookAdapter$MyViewHolder
 lev.ariel.arielbookstore.ViewHolder <|-- lev.ariel.arielbookstore.BookAdapter$MyViewHolder
 androidx.fragment.app.Fragment <|-- lev.ariel.arielbookstore.RegisterFragment
+android.content.BroadcastReceiver <|-- lev.ariel.arielbookstore.ScheduleBroadCastReciver
 androidx.appcompat.app.AppCompatActivity <|-- lev.ariel.arielbookstore.BuyOrSellActivity
 androidx.appcompat.app.AppCompatActivity <|-- lev.ariel.arielbookstore.MainActivity
 lev.ariel.arielbookstore.OnClickListener <|.. lev.ariel.arielbookstore.BookListActivity

@@ -57,10 +57,10 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.MyViewHolder> 
         StorageReference imageRef = storage.getReference().child("images/" + bookIsbn + ".jpg");
 
         // Define max size for image download (2MB)
-        final long ONE_MEGABYTE = 2048 * 2048;
+        final long TWO_MEGABYTE = 2048 * 2048;
 
         // Download the image and set it into the ImageView
-        imageRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(bytes -> {
+        imageRef.getBytes(TWO_MEGABYTE).addOnSuccessListener(bytes -> {
             Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
             holder.bookImage.setImageBitmap(bitmap);
         });

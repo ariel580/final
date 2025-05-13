@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:textAlignment="center"
-        android:text="This app was created by a single man, he worked on this app for a long time and did a lot of hard work so that this app will be succesful. he started the app in 2025 with the hopes of it becoming a great app in the future as well. if you are still reading this please give this guy a good grade on the prject."
+        android:text="ariel's books is am online book platform that allows its users to sell their personal books as well as buying used books from diffrent users. after you sign in or register to the app you will choose the preferd service of the app that you will like to use."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:padding="12dp"

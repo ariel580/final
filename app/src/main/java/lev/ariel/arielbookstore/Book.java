@@ -28,6 +28,7 @@ public class Book {
 
     // Price of the book
     private float bookPrice;
+    private String sellerEmail;
 
     // Full constructor to initialize all fields when creating a new Book object
     public Book(int bookImage, String bookIsbn, String bookName, String bookAuthor,
@@ -112,6 +113,8 @@ public class Book {
     public void setBookPrice(float bookPrice) {
         this.bookPrice = bookPrice;
     }
+    public String getSellerEmail() { return sellerEmail; }
+    public void setSellerEmail(String sellerEmail) { this.sellerEmail = sellerEmail; }
 
     // Overrides the default toString() method to return all book details as a single string
     @Override

@@ -7,37 +7,50 @@
     android:layout_height="match_parent"
     android:background="@drawable/my_background"
     tools:context=".HomeActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/myToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@android:color/transparent"
+        android:elevation="4dp"
+        android:theme="@style/BlackToolbarIcons"
+        app:title=""
+        app:titleTextColor="@color/black"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:text="Ariel's Book Store"
-        android:textSize="34sp"
+        android:textColor="#041357"
+        android:textSize="45sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/myToolbar" />
 
     <Button
         android:id="@+id/buttonLoginPage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="64dp"
-        android:text="Login"
+        android:layout_width="97dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="58dp"
         android:background="@drawable/my_btn"
+        android:text="Login"
         android:textColor="#FFFFFF"
+        android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/buttonRegisterPage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="Register"
+        android:layout_width="97dp"
+        android:layout_height="58dp"
+        android:layout_marginEnd="54dp"
         android:background="@drawable/my_btn"
+        android:text="Register"
+        android:textSize="16dp"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/buttonLoginPage" />
@@ -65,17 +78,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonRegisterPage">
 
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="361dp"
+            android:layout_marginTop="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="20dp"
+            app:srcCompat="@drawable/logo" />
     </FrameLayout>
 
-    <Button
-        android:id="@+id/buttonNotification"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="allow notification"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButtonMoreInfo"
-        app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/my_btn"
-        android:textColor="#FFFFFF"
-        app:layout_constraintTop_toTopOf="@+id/imageButtonMoreInfo" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

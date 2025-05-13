@@ -46,13 +46,8 @@ public class LoginFragment extends Fragment {
                 String email = emailLoginEt.getText().toString();
                 String password = passwordLogInEt.getText().toString();
 
-                // Check if fields are empty
-                if (email.isEmpty() || password.isEmpty()) {
-                    Toast.makeText(getContext(), "email and/or password can't be empty", Toast.LENGTH_LONG).show();
-                }
-
                 // Validate email and password fields
-                else if (!validatePassword() || !validateUsername()) {
+                 if (!validatePassword() || !validateUsername()) {
                     Toast.makeText(getContext(), "username and/or password not valid", Toast.LENGTH_LONG).show();
                 }
 
@@ -103,10 +98,36 @@ public class LoginFragment extends Fragment {
                         .addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                // If login fails, show an error message
-                                Toast.makeText(getContext(), "not-good", Toast.LENGTH_SHORT).show();
+                                // Get the error message from the exception
+                                String message = e.getMessage();
+
+                                // Check if the message is not null before inspecting it
+                                if (message != null) {
+
+                                    // If Firebase says the user doesn't exist
+                                    if (message.contains("There is no user record")) {
+                                        Toast.makeText(getContext(), "No account with this email was found", Toast.LENGTH_LONG).show();
+
+                                        // If the password is wrong for the existing user
+                                    } else if (message.contains("The password is invalid")) {
+                                        Toast.makeText(getContext(), "Incorrect password", Toast.LENGTH_LONG).show();
+
+                                        // If the email format is not valid (e.g. missing @ or .com)
+                                    } else if (message.contains("badly formatted")) {
+                                        Toast.makeText(getContext(), "Invalid email address", Toast.LENGTH_LONG).show();
+
+                                        // Generic fallback for other errors, print the message for debugging
+                                    } else {
+                                        Toast.makeText(getContext(), "incorrect password", Toast.LENGTH_LONG).show();
+                                    }
+
+                                    // If the message is null, just show a generic error
+                                } else {
+                                    Toast.makeText(getContext(), "Login failed", Toast.LENGTH_SHORT).show();
+                                }
                             }
-                        });
+                        })
+                ;
             }
         });
 

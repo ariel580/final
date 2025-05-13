@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Load the animation from resources and apply it to the logo
         Animation animation = AnimationUtils.loadAnimation(context, R.anim.my_anim);
-        animation.setDuration(5000); // Set animation duration to 5 seconds
+        animation.setDuration(3000); // Set animation duration to 3 seconds
         logoIv.setAnimation(animation); // Apply the animation to the logo
 
         // Play a sound effect using MediaPlayer
@@ -44,6 +44,6 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                 startActivity(intent);
             }
-        }, 5000); // Delay in milliseconds
+        }, 3000); // Delay in milliseconds
     }
 }
